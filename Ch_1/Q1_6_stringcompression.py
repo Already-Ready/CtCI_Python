@@ -20,11 +20,14 @@ def comp(string):
                 new += string[start]
                 new += str(i-start+1)
             # 문자끝까지 왔으며, 입력받은 문자의 마지막이 바뀌어서 start지점의 문자와 다른경우
-            # 예를들어 'aabcccccaaab' 를 입력받는 경우
+            # 예를들어 'aabccaaabba' 를 입력받는 경우
             elif i == len(string)-1 and string[i] != string[start]:
+                new += string[start]
+                new += str(i-start)
                 start = i
                 new += string[start]
                 new += str(1)
+        print(start)
 
     if len(new) > len(string):
         return string
