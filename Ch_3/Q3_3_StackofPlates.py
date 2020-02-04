@@ -64,9 +64,15 @@ class SetofStacks():
             raise Exception("Stacks is empty")
         else:
             pop_num = self.TopStack().pop()
+            # 각 위치의 stack들의 크기를 나타내주는 sizes 리스트에서도 pop에 따라 1을 빼주고 그 값이 0 이되면 해당 스텍이 비었으므로 sizes에서도 제거해준다.
+            self.sizes[self.IndexofTopStack()] -= 1
+            if self.sizes[self.IndexofTopStack()] == 0:
+                self.sizes.pop()
+            else: pass
             # top stack에서 top 인 값을 pop한 후 해당 stack이 빈 스텍이 된다면? --> 해당 스텍도 stacks에서 지워줘야한다.
             if not self.TopStack():
                 self.stacks.pop()
+
                 return pop_num
             else:
                 return pop_num
@@ -90,13 +96,17 @@ def stacks():
     print(newstack.stacks)
     newstack.push(5)
     print(newstack.stacks)
+    print("--------------")
     print(newstack.peek())
     newstack.pop()
+    print(newstack.sizes)
     print(newstack.stacks)
     newstack.pop()
+    print(newstack.sizes)
     print(newstack.stacks)
     print(newstack.peek())
     newstack.pop()
+    print(newstack.sizes)
     print(newstack.stacks)
     print(newstack.peek())
 
