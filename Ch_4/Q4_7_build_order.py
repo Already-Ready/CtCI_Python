@@ -50,7 +50,6 @@ def build_order(projects, dependencies):
                 edge_node.dependency_num -= 1
                 if edge_node.dependency_num == 0:
                     queue.add(edge_node)
-                    
     if len(order) < len(projects):
         return Exception("Graph have Cycle")
     return order
