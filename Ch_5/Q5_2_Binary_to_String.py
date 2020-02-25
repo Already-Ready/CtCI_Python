@@ -1,3 +1,4 @@
+import unittest
 
 def toBinary(num):
     if num <= 0 or num >= 1:
@@ -21,4 +22,11 @@ def toBinary(num):
 
     return binaryString
 
-print(toBinary(0.625))
+class Test(unittest.TestCase):
+    def test_binary_to_string(self):
+        self.assertEqual(toBinary(0.75), "0.11")
+        self.assertEqual(toBinary(0.625), "0.101")
+        self.assertEqual(toBinary(0.3), "ERROR : This num is too Long Binary")
+
+if __name__ == "__main__":
+  unittest.main()
