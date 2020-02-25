@@ -22,6 +22,7 @@ def toBinary(num):
 
     return binaryString
 
+
 class Test(unittest.TestCase):
     def test_binary_to_string(self):
         self.assertEqual(toBinary(0.75), "0.11")
