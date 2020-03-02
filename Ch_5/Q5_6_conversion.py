@@ -1,4 +1,5 @@
 
+# 두 수의 비트값을 하나씩 비교해 나가는 방법
 def flip(num1, num2):
     count = 0
 
@@ -10,7 +11,8 @@ def flip(num1, num2):
 
     return count
 
-
+# 두 수를 XOR 연산을 한 후 그 값이 1인 비트를 찾는 방법
+# --> XOR 연산에서 1이 나왔다는것은 두 비트의 값이 달랐다는 뜻이기 때문이다.
 def flip_XOR(num1, num2):
     count = 0
     com = (num1 ^ num2)
